@@ -1,4 +1,6 @@
 from fastapi import FastAPI
+
+from backend.app.api.db_test import router as db_test_router
 from backend.app.api.health import router as health_router
 
 app = FastAPI(
@@ -8,3 +10,4 @@ app = FastAPI(
 )
 
 app.include_router(health_router, prefix="/api")
+app.include_router(db_test_router, prefix="/api")
